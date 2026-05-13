@@ -12,6 +12,8 @@ export default function Home() {
   let [searchTerm, setSearchTerm] = useState<string>("");
   let [debouncedSearchTerm, setDobouncedSearchTerm] = useState<string>("");
 
+  let [successMessage, setSuccessMessage] = useState<string>("");
+
   const {
     register,
     handleSubmit,
@@ -56,6 +58,7 @@ export default function Home() {
     try {
       const createdProperty = await createProperty(data);
       setProperties((prevProperties) => [createdProperty, ...prevProperties]);
+      setSuccessMessage("Property Created Successfully");
       reset({
         name: "",
         city: "",
@@ -153,6 +156,11 @@ export default function Home() {
           >
             {isSubmitting ? "Creating..." : "Create Property"}
           </button>
+          {successMessage && (
+            <div className="mt-2 rounded bg-green-100 px-3 py-2 text-green-600">
+              {successMessage}
+            </div>
+          )}
         </form>
       </div>
     </div>
