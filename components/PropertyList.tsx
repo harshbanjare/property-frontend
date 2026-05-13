@@ -26,7 +26,7 @@ export const PorpertyList = ({
     }
 
     return (
-      <div className="flex flex-col gap-2 ">
+      <div className="flex flex-col gap-2 max-h-[750px] overflow-y-auto">
         {properties.map((property) => (
           <div
             className="flex flex-col bg-gray-50 border border-black rounded-lg p-3 gap-2 shadow-sm hover:shadow-md hover:bg-blue-100 transition-all"

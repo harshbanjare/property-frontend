@@ -38,7 +38,7 @@ export default function Home() {
   }, [debouncedSearchTerm]);
 
   return (
-    <div className="flex bg-gray-100 flex-row p-4 gap-2">
+    <div className="flex bg-gray-100 flex-row p-4 gap-2 justify-center items-start min-h-screen">
       <PorpertyList
         properties={properties}
         searchTerm={searchTerm}
